@@ -48,8 +48,31 @@
             }
 
 
-        }   
+        }
+
+        $movies = [];
+
+        $movies[] = new Movie("Inception", "C. Nolan", ["Drama", "Sci-fi"]);
+        $movies[] = new Movie("Pulp Fiction", "Q. Tarantino", ["Drama", "Comedy"]);
+        $movies[] = new Movie("The Lord of The Rings: The Return of the King", "P. Jackson", ["Fantasy"]);
     ?>
+
+    <h1>Movies</h1>
+
+    <?php foreach($movies as $movie) { ?>
+    
+        <h3><?php echo $movie->getTitle(); ?></h3>
+        <p><?php echo $movie->getDirector(); ?></p>
+        <ul>
+
+            <?php foreach($movie->getGenres() as $genre) { ?>
+            
+                <li><?php echo $genre; ?></li>
+
+            <?php } ?>
+
+        </ul>    
+    <?php } ?>
 
 </body>
 </html>
